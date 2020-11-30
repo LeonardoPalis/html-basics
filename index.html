@@ -7,6 +7,19 @@
   <title>Aula 1</title>
 </head>
 <body>
+  <div class="form-wrapper">
+    <input id="name" />
+    <button onclick="onClick()">Adicionar Nome</button>
+  </div>
+  <div class="form-change-wrapper">
+    <input id="change-old-name" placeholder="nome antigo" />
+    <input id="change-name" placeholder="novo nome"  />
+    <button onclick="changeName()" >Alterar Nome</button>
+  </div>
+  <div class="form-change-wrapper">
+    <input id="delete-name" />
+    <button onclick="deleteName()">Remover Nome</button>
+  </div>
   <script src="ul.js"></script>
 </body>
 </html>

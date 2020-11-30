@@ -63,3 +63,11 @@ body {
   color: red;
   font-weight: bold;
 }
+
+.form-wrapper {
+  margin-top: 100px;
+}
+
+.form-change-wrapper {
+  margin-top: 16px;
+}

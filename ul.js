@@ -1,15 +1,10 @@
 const { body } = document;
 
-onClick('Leonardo Palis 1');
-onClick('Leonardo Palis 2');
-onClick('Leonardo Palis 3');
-onClick('Leonardo Palis 4');
-onClick('Leonardo Palis 5');
 
-changeName('João Barbosa');
-changeName('João Barbosa 2');
-
-function onClick(name) {
+function onClick() {
+  let nameElementNode = document.querySelector('#name');
+  name = nameElementNode.value;
+  if (name.trim().length === 0) return;
   let ulElementNode = document.querySelector('ul');
   if (!ulElementNode) {
     ulElementNode = document.createElement('ul');
@@ -21,18 +16,47 @@ function onClick(name) {
   liElementNode.appendChild(textElementNode);
   ulElementNode.appendChild(liElementNode);
   body.appendChild(ulElementNode);
+  nameElementNode.value = '';
 }
 
-function changeName(newName) {
+function changeName() {
+  let newNameElementNode = document.querySelector('#change-name');
+  let oldNameElementNode = document.querySelector('#change-old-name');
+  let newName = newNameElementNode.value;
+  if (newName.trim().length === 0) return;
   const ulElementNode = document.querySelector('ul');
-
+  newNameElementNode.value = '';
+  let allChanged = true;
   for (let i = 0; i < ulElementNode.childNodes.length; i++) {
     const liNodeElement = ulElementNode.childNodes[i];
-    if (!liNodeElement.className) {
+    if (oldNameElementNode.value === liNodeElement.textContent) {
       liNodeElement.textContent = newName;
       liNodeElement.className = 'changed-element';
+      allChanged = false;
+      oldNameElementNode.value = '';
       return;
     }
   }
-  
+  if (allChanged) {
+    alert("Nenhum nome para ser alterado!");
+  }
+}
+
+
+function deleteName() {
+  const ulElementNode = document.querySelector('ul');
+  const deleteNameElementNode = document.querySelector('#delete-name');
+  const deleteName = deleteNameElementNode.value;
+  if (deleteName.trim().length === 0) return;
+  const ulElementChildNodes = ulElementNode.childNodes;
+  let findElement = false;
+  for (let i = 0; i < ulElementChildNodes.length; i++) {
+    if (ulElementChildNodes[i].textContent.toUpperCase() === deleteName.toUpperCase()) {
+      ulElementNode.removeChild(ulElementChildNodes[i]);
+      findElement = true;
+    }
+  }
+  if (!findElement) {
+    alert('Nome não encontrado!')
+  }
 }
