@@ -6,9 +6,8 @@ onClick('Leonardo Palis 3');
 onClick('Leonardo Palis 4');
 onClick('Leonardo Palis 5');
 
-changeName('João Barbosa', 'name4');
-changeName('João Barbosa 2', 'name2');
-changeName('João Barbosa 3', 'name5');
+changeName('João Barbosa');
+changeName('João Barbosa 2');
 
 function onClick(name) {
   let ulElementNode = document.querySelector('ul');
@@ -24,8 +23,16 @@ function onClick(name) {
   body.appendChild(ulElementNode);
 }
 
-function changeName(newName, id) {
-  const element = document.getElementById(id);
-  element.textContent = newName;
-  element.className = 'changed-element';
+function changeName(newName) {
+  const ulElementNode = document.querySelector('ul');
+
+  for (let i = 0; i < ulElementNode.childNodes.length; i++) {
+    const liNodeElement = ulElementNode.childNodes[i];
+    if (!liNodeElement.className) {
+      liNodeElement.textContent = newName;
+      liNodeElement.className = 'changed-element';
+      return;
+    }
+  }
+  
 }
