@@ -1,3 +1,9 @@
+:root {
+  --primary: blue;
+  --secondary: #cecece;
+  --subtitle: #000;
+  --border-default-size: 3px;
+}
 
 .red {
   background-color: red
@@ -38,7 +44,7 @@ p {
 .login {
   width: 400px;
   height: 400px;
-  border: 3px solid red;
+  border: var(--border-default-size) solid var(--primary);
   border-radius: 8px;
 }
 
@@ -60,7 +66,7 @@ body {
 
 
 .changed-element {
-  color: red;
+  color: var(--primary);
   font-weight: bold;
 }
 
@@ -70,4 +76,9 @@ body {
 
 .form-change-wrapper {
   margin-top: 16px;
+}
+
+.button1 {
+  color: black;
+
 }

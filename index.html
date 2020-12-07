@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
   <title>Aula 1</title>
 </head>
+
 <body>
   <div class="form-wrapper">
     <input id="name" />
@@ -13,13 +15,32 @@
   </div>
   <div class="form-change-wrapper">
     <input id="change-old-name" placeholder="nome antigo" />
-    <input id="change-name" placeholder="novo nome"  />
-    <button onclick="changeName()" >Alterar Nome</button>
+    <input id="change-name" placeholder="novo nome" />
+    <button onclick="changeName()">Alterar Nome</button>
   </div>
   <div class="form-change-wrapper">
     <input id="delete-name" />
-    <button onclick="deleteName()">Remover Nome</button>
+    <button onclick="deleteName()" style="background-color: blue; color: white; border-radius: 8px;">Remover
+      Nome</button>
+  </div>
+
+
+  <div class="form-change-wrapper">
+    <h2>Calculadora</h2>
+    <input id="input-firstelement" type="number" onchange="changeFirstInput()" />
+    <input type="number" onchange="changeSecondInput()" />
+    <button onclick="somar()">+</button>
+    <button onclick="subtrair()">-</button>
+    <button onclick="multiplicar()">*</button>
+    <button onclick="dividir()">/</button>
+  </div>
+  <p class="form-change-wrapper" id="result">Resultado: </p>
+  <button onclick="showHistory()">Ver histórico</button>
+  <div id="history">
+    <p>Histórico:</p>
   </div>
   <script src="ul.js"></script>
+  <script src="calc.js"></script>
 </body>
+
 </html>
