@@ -9,38 +9,47 @@
 </head>
 
 <body>
-  <div class="form-wrapper">
-    <input id="name" />
-    <button onclick="onClick()">Adicionar Nome</button>
-  </div>
-  <div class="form-change-wrapper">
-    <input id="change-old-name" placeholder="nome antigo" />
-    <input id="change-name" placeholder="novo nome" />
-    <button onclick="changeName()">Alterar Nome</button>
-  </div>
-  <div class="form-change-wrapper">
-    <input id="delete-name" />
-    <button onclick="deleteName()" style="background-color: blue; color: white; border-radius: 8px;">Remover
-      Nome</button>
+
+  <div class="calc-container">
+    <div class="calc-border">
+      <section class="result-container">
+        <span class="result-value">0</span>
+      </section>
+      <section class="line line1">
+        <button class="default-button gray-dark">AC</button>
+        <button class="default-button gray-dark">+/-</button>
+        <button class="default-button gray-dark">%</button>
+        <button onclick="div()"  class="default-button orange">/</button>
+      </section>
+      <section class="line line2">
+        <button onclick="onClickNumber()" class="default-button gray-light">7</button>
+        <button onclick="onClickNumber()" class="default-button gray-light">8</button>
+        <button  onclick="onClickNumber()"class="default-button gray-light">9</button>
+        <button onclick="mult()" class="default-button orange">X</button>
+      </section>
+      <section class="line line3">
+        <button onclick="onClickNumber()" class="default-button gray-light">4</button>
+        <button onclick="onClickNumber()" class="default-button gray-light">5</button>
+        <button onclick="onClickNumber()" class="default-button gray-light">6</button>
+        <button onclick="sub()" class="default-button orange">-</button>
+      </section>
+      <section class="line line4">
+        <button onclick="onClickNumber()" class="default-button gray-light">1</button>
+        <button onclick="onClickNumber()" class="default-button gray-light">2</button>
+        <button onclick="onClickNumber()" class="default-button gray-light">3</button>
+        <button onclick="soma()" class="default-button orange">+</button>
+      </section>
+      <section class="line line5">
+        <button onclick="onClickNumber()" class="zero-button gray-light">0</button>
+        <button class="small-button gray-light">,</button>
+        <button onclick="onResult()" class="equal-button small-button orange">=</button>
+      </section>
+
+    </div>
   </div>
 
+  <script src="./calc-full.js"></script>
 
-  <div class="form-change-wrapper">
-    <h2>Calculadora</h2>
-    <input id="input-firstelement" type="number" onchange="changeFirstInput()" />
-    <input type="number" onchange="changeSecondInput()" />
-    <button onclick="somar()">+</button>
-    <button onclick="subtrair()">-</button>
-    <button onclick="multiplicar()">*</button>
-    <button onclick="dividir()">/</button>
-  </div>
-  <p class="form-change-wrapper" id="result">Resultado: </p>
-  <button onclick="showHistory()">Ver histórico</button>
-  <div id="history">
-    <p>Histórico:</p>
-  </div>
-  <script src="ul.js"></script>
-  <script src="calc.js"></script>
 </body>
 
 </html>
